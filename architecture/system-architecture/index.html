@@ -410,7 +410,35 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p></p>
+        <p><h1 id="system-architecture">System Architecture</h1>
+<h2 id="overview">Overview</h2>
+<p>Scarif.xyz is a decentralized platform that democratizes access to AI technologies while prioritizing privacy preservation and ensuring the authenticity of AI-generated content. Built on blockchain technology and zero-knowledge proofs, the platform fosters collaborative innovation and enables users to obtain temper-proof responses from AI models.</p>
+<p><img alt="Overview" src="resources/images/overview.png" /></p>
+<h2 id="components">Components</h2>
+<h3 id="1-smart-contracts">1. Smart Contracts</h3>
+<ul>
+<li><strong>NFT Contract</strong>: Manages the creation, ownership, and trading of AI-generated NFTs. Includes functionality for minting new NFTs and verifying authenticity using zero-knowledge proofs.</li>
+<li><strong>Authentication Contract</strong>: A Noir zk prover that verifies the authenticity of AI-generated NFTs without relying on oracles.</li>
+</ul>
+<h3 id="2-decentralized-storage">2. Decentralized Storage</h3>
+<ul>
+<li><strong>IPFS (InterPlanetary File System)</strong>: Stores AI-generated content, associated metadata, and a record of NFTs minted on-chain. This ensures resilience, censorship resistance, and transparency in listing NFTs.</li>
+</ul>
+<h3 id="3-client-interface">3. Client Interface</h3>
+<ul>
+<li><strong>Web Interface</strong>: Allows users to interact with the decentralized AI platform through a web browser. Enables browsing AI-generated content, minting NFTs, and verifying authenticity.</li>
+</ul>
+<h3 id="4-ai-models">4. AI Models</h3>
+<ul>
+<li><strong>Off-Chain Generative Models</strong>: Generative models reside off-chain, leveraging distributed cloud compute for content generation. While models are not stored on-chain, their outputs (AI-generated content) are minted as NFTs and stored on IPFS.</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<ol>
+<li><strong>Content Generation</strong>: Off-chain generative models generate art content based on input prompts or predefined styles, utilizing decentralized compute networks.</li>
+<li><strong>NFT Minting</strong>: Generated content is minted into NFTs on-chain, with metadata and a reference to the content stored on IPFS.</li>
+<li><strong>Authenticity Verification</strong>: The authentication contract verifies the authenticity of AI-generated NFTs using zero-knowledge proofs, ensuring trust without relying on oracles.</li>
+<li><strong>Decentralized Storage</strong>: AI-generated content, metadata, and a record of NFTs are stored on IPFS and on-chain.</li>
+</ol></p>
     </article>
 </section>
             <!-- endblock -->

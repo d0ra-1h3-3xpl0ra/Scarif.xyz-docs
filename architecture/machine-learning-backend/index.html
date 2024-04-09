@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Prerequisites - Scarif.xyz</title>
+        <title>Machine learning backend - Scarif.xyz</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -95,7 +95,7 @@
             </li>
             <li class="drac-box">
                 <a href="../.."
-                    class=" active 
+                    class="
                     drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
                     data-bs-toggle="collapse" data-bs-target="#getting-started-collapse" aria-expanded="false">
                     Getting Started
@@ -104,15 +104,15 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="./"
-            class=" active 
+        <a href="../../getting-started/prerequisites/"
+            class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Prerequisites
         </a>
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../installation-and-setup/"
+        <a href="../../getting-started/installation-and-setup/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Installation and Setup
@@ -120,7 +120,7 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../quick-start-guide/"
+        <a href="../../getting-started/quick-start-guide/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Quick Start Guide
@@ -140,7 +140,7 @@
                     <ul class="mb-5 drac-list drac-list-none">
                             
     <li class="drac-box-ternary">
-        <a href="../../architecture/system-architecture/"
+        <a href="../system-architecture/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             System Architecture
@@ -148,7 +148,7 @@
     </li>
                             
     <li class="drac-box-ternary">
-        <a href="../../architecture/contract-design/"
+        <a href="../contract-design/"
             class="
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
             Contract Design
@@ -364,22 +364,6 @@
                     <!-- block preview -->
                     <li class="nav-item">
                             
-        <div class="container">
-            <div class="row row-preview">
-                <div class="col">
-                    <a href="../../introduction/idea-and-vision/"
-                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover">
-                        <i class="fa fa-arrow-left"></i> Previous
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="../installation-and-setup/"
-                        class="btn-preview drac-btn drac-btn-outline drac-text-white drac-text-cyan-green--hover" style="padding-left: 3%;">
-                        Next <i class="fa fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
                     </li>
                     <!--  endblock -->
 
@@ -410,36 +394,30 @@
             <!-- block content -->
                 <section class="p-md-5 section-content">
     <article>
-        <p><h1 id="prerequisites">Prerequisites</h1>
-<h2 id="for-users-who-want-to-mint">For Users Who Want to Mint:</h2>
+        <p><p>The ML backend consists of a docker microservice. This can be hosted for example on: </p>
 <ul>
-<li><strong>Wallet</strong>: You will need a Solana wallet to mint NFTs on Scarif.xyz. We recommend using wallets like <a href="https://phantom.app/">Phantom</a>.</li>
+<li>Custom Backend (consumer grad GPUs)</li>
+<li>Google Cloud Run</li>
+<li>Azure Container Apps</li>
+<li>AWS Apprunner</li>
 </ul>
-<h2 id="for-artists">For Artists:</h2>
-<p>Whether you're just working on a prompt template or diving into machine learning models, here's what you need:</p>
-<ul>
-<li><strong>Prompt Template</strong>: Artists can start with creating unique prompt templates for their collections.</li>
-<li><strong>Machine Learning Knowledge</strong>: For advanced artists interested in creating or tuning machine learning models, familiarity with frameworks such as TensorFlow or PyTorch is beneficial.</li>
-</ul>
-<h2 id="for-developers">For Developers:</h2>
-<ol>
-<li><strong>Programming Languages</strong>:</li>
-<li><strong>Python</strong>: Scarif.xyz is primarily built using Python.</li>
-<li><strong>TypeScript</strong>: Knowledge of TypeScript is required for certain frontend development tasks.</li>
-<li>
-<p><strong>Noir</strong>: <a href="https://noir-lang.org/">Noir</a> is utilized for implementing zero-knowledge proofs (zk proofs) to ensure the integrity and authenticity of AI-generated content.</p>
-</li>
-<li>
-<p><strong>Frameworks and Tools</strong>:</p>
-</li>
-<li><strong>Nest.js</strong>: <a href="https://nestjs.com/">NestJs</a> is a framework for building efficient and scalable server-side applications, for backend development.</li>
-<li><strong>Docker</strong>: Familiarity with Docker is essential for containerization.</li>
-<li><strong>Docker Compose</strong>: Used for defining and running multi-container Docker applications.</li>
-<li><strong>Google Cloud Platform (GCP)</strong>: Scarif.xyz utilizes GCP services, so knowledge of GCP (or similar cloud service providers) is beneficial.</li>
-<li><strong>Solana</strong>: Understanding Solana blockchain technology is necessary for development involving NFT minting and transactions.</li>
-<li><strong>Solidity</strong>: Knowledge of Solidity is required for developing smart contracts on the Solana blockchain.</li>
-<li><strong>Machine Learning Frameworks</strong>: Depending on your tasks, expertise in machine learning frameworks such as TensorFlow or PyTorch may be necessary.</li>
-</ol></p>
+<p>The docker microservice is easy to reproduce and host locally for anyone who wants to participate in the network. 
+The application can be called via REST API, i.e. from curl, Typescript, Python, etc.really anything that can make POST requests. 
+An example query includes a "prompt" parameter, and a "seed" parameter. The prompt parameter is constant amongst a set of applications and can be changed. The seed parameter is solely set through reproducible, publicly avaiable parameters that are stored on the blockchain. These may include</p>
+<p>An example request:</p>
+<pre><code class="language-bash">curl -X POST -H &quot;Content-Type: application/json&quot; -d '{&quot;seed&quot;: 42, &quot;prompt&quot;: &quot;Peaky Blinders NFT. Faces are not directly visible. No text.&quot;}' http://127.0.0.1:2500/predict
+</code></pre>
+<p>The corresponding response: </p>
+<pre><code>{
+    &quot;response&quot;: &lt;UTF-8 Base64 Encoded Bytestring Of PNG Image&gt;
+}
+</code></pre>
+<p>The Smart contract can then 
+(1) generate and then store the image on arweave, or
+(2) verify the base64 string with the image that is on arweave</p>
+<p>In other words, the REST POST arguments are “seed” (you can map any bytes to an integer), and a prompt. Make sure that the prompt is relatively short (i.e. not GPT4-long). In this case, the model runs locally on localhost, but technically the model could run anywhere. In the future, we plan on using an ENS or Solana Name Service also decentralize this aspect.</p>
+<p>Example interface (provided in the repository, using gradio): </p>
+<p><img alt="Stable Diffusion Gradio Demo" src="resources/images/gradio-demo-stable-diffusion.jpg" /></p></p>
     </article>
 </section>
             <!-- endblock -->
